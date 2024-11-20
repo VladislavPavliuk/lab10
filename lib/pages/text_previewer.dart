@@ -12,7 +12,7 @@ class _TextPreviewerState extends State<TextPreviewer> {
   final TextEditingController _controller = TextEditingController();
 
   String _previewText = "";
-  int _sliderValue=0;
+  int _sliderValue=16;
 
   void _showCancelAlertDialog() {
     showDialog(
@@ -46,6 +46,10 @@ class _TextPreviewerState extends State<TextPreviewer> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
+          title: const Image(image: NetworkImage("https://emojiisland.com/cdn/shop/products/Robot_Emoji_Icon_abe1111a-1293-4668-bdf9-9ceb05cff58e_large.png?v=1571606090"),
+            width: 50,
+            height: 50,
+          ),
           content: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -154,7 +158,7 @@ class _TextPreviewerState extends State<TextPreviewer> {
                 Expanded(
                   child: Slider(
                     value: _sliderValue.toDouble(),
-                    min: 0,
+                    min: 1,
                     max: 100,
 
                     onChanged: (value) {
